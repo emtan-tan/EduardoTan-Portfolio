@@ -1,0 +1,22 @@
+/* CSS by Eduardo Tan */
+
+/* Color Palette:
+
+Deep Blue: #203a5b
+Light Lavender: #d9d6f5
+Gray: #c7d3dd
+Ice Blue: #dff6ff
+Frost White: #f8fcff
+Aqua: #48cae4
+Contrast Red: #e63946
+
+*/
+
+/* Global (Base) Mobile First */
+
+body {
+    background-color: #dff6ff;
+}
+a {
+    text-decoration: none;
+}
