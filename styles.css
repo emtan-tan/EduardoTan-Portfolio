@@ -1,12 +1,12 @@
-/* CSS by Eduardo Tan */
+/* CSS Written by Eduardo Tan */
 
 /* Color Palette:
 
 Deep Blue: #203a5b
 Light Lavender: #d9d6f5
 Gray: #c7d3dd
-Ice Blue: #dff6ff
-Frost White: #f8fcff
+Ice Blue: lightblue
+Frost White: lightcyan
 Aqua: #48cae4
 Contrast Red: #e63946
 
@@ -14,9 +14,171 @@ Contrast Red: #e63946
 
 /* Global (Base) Mobile First */
 
+* {
+    box-sizing: border-box;
+    border-radius: 8px;
+}
 body {
-    background-color: #dff6ff;
+    background-color: lightcyan;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1em;
+    align-items: start;
 }
 a {
+    color: #203a5b;
     text-decoration: none;
+}
+a:hover {
+    color: #e63946;
+}
+header {
+    background-color: #48cae4;
+    padding: 20px;
+    text-align: center;
+    margin: 0 0 1em 0;
+}
+h1 {
+    margin: 0;
+}
+h2 {
+    text-decoration: underline;
+}
+nav {
+    background-color: lightcyan;
+    padding: 10px;
+    margin: 0 0 1em 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 110%;
+}
+nav a {
+    display: block;
+    background-color: lightcyan;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid black;
+    margin: 0 10px;
+    padding: .5em;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    font-size: 1.1em;
+}
+nav li {
+    margin: 10px 0;
+}
+nav a:hover {
+    color: lightcyan;
+    background-color: black;
+}
+section {
+    background-color: lightblue;
+    margin: 0 0 1em 0;
+    padding: .5em 1em;
+}
+.photo {
+    margin: 0 0 1em 0;
+}
+.photo img {
+    display: block;
+    margin: 0 auto;
+    border-color: black;
+    border-style: outset;
+    border-width: 5px;
+    border-radius: 50%;
+}
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    background-color: #d9d6f5;
+    padding: 1em;
+    border: 1px solid black;
+}
+.card-row section {
+    flex: 1 1 250px;
+    padding: 1em;
+    background-color: lightblue;
+    border: 1px dashed black;
+}
+#link-list li {
+    display: inline-block;
+    margin: 0 10px;
+    background-color: lightcyan;
+    padding: .5em 1em;
+    border: 1px solid black;
+}
+footer {
+    background-color: #48cae4;
+    padding: 1em;
+    text-align: center;
+    margin: 1em 0 0 0;
+}
+/* MEDIA QUERIES */
+@media screen and (min-width: 600px) {
+    nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "photo      primary"
+            "secondary  secondary"
+            "tertiary   tertiary"
+            "quaternary quaternary";
+    }
+    .photo {
+        grid-area: photo;
+    }
+    #primary {
+        grid-area: primary;
+    }
+    #secondary {
+        grid-area: secondary;
+    }
+    #tertiary {
+        grid-area: tertiary;
+    }
+    #quaternary {
+        grid-area: quaternary;
+    }
+}
+@media screen and (min-width: 1024px) {
+    nav ul {
+        display: block;
+    }
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        grid-template-areas: 
+            "header     header"
+            "nav        main"
+            "footer     footer";
+        gap: 1em;
+    }
+    header {
+        background-color: #48cae4;
+        grid-area: header;
+    }
+    nav {
+        background-color: lightblue;
+        grid-area: nav;
+        align-self: stretch;
+    }
+    main {
+        grid-area: main;
+    }
+    footer {
+        margin-top: 0;
+        grid-area: footer;
+    }
 }
